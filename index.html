@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <title>Portfólio | Camily Cruz</title>
+</head>
+
+<body>
+    <div class="particulas">
+
+    </div>
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Início</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+            <li>
+                <a href="#contatos" class="menu-link">Contato</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+        <div>
+            <img src="img/me.png" alt="Foto perfil" class="foto-perfil">
+            <h1>Camily Cruz</h1>
+            <p class="cabecalho-subTitulo">Desenvolvedor Front End</p>
+        </div>
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre mim</h2>
+        <div class="sobre-conteudo">
+            <p class="sobre-paragrafo">Olá! Sou Camily Cruz, atualmente cursando tecnólogo em Gestão da Tecnologia da
+                Informação, apaixonada
+                por tecnologia e pelo impacto que ela pode gerar. Meu objetivo é unir tecnologia e design para
+                transformar ideias em soluções práticas. Estou sempre buscando aprimorar minhas habilidades em HTML, CSS
+                e JavaScript, criando experiências digitais funcionais e atraentes.</p>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-conteudo">
+            <div class="projetos-foto">
+                <img src="img/WhatsApp Image 2026-06-23 at 15.53.09.jpeg" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-texto-projetos">
+                    <h3 class="info-projetos">Android - Site</h3>
+                    <p class="paragrafo-projetos">Desenvolvimento de um site sobre a história do mascote "Android".
+                        Desenvolvido no cruso de HTML/CSS</p>
+                </div>
+            </div>
+
+            <div class="projetos-foto">
+                <img src="img/fitzone.jpeg" alt="Projeto 2" class="projetos-imagem">
+                <div class="caixa-texto-projetos">
+                    <h3 class="info-projetos">FITZONE - Site</h3>
+                    <p class="paragrafo-projetos">Plataforma criada para promover os serviços da academia e apresentar seus profissionais.</p>
+                </div>
+            </div>
+
+            <div class="projetos-foto">
+                <img src="img/doceria.png" alt="Projeto 3" class="projetos-imagem">
+                <div class="caixa-texto-projetos">
+                    <h3 class="info-projetos">Doceria - Landing Page</h3>
+                    <p class="paragrafo-projetos">Landing page profissional para divulgação de serviços e trabalhos de uma doceria.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulos">Contatos</h2>
+        <div class="links">
+
+            <a href="https://www.linkedin.com/in/camily-cruz-a096b1401" target="_blank">
+                <i class="fab fa-linkedin"></i>LinkedIn
+            </a>
+
+
+            <a href="https://github.com/camilycruzvs" target="_blank">
+                <i class="fab fa-github"></i>GitHub
+            </a>
+        </div>
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
+            </div>
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua Mensagem" id="mensagem"></textarea>
+            </div>
+
+            <button type="submit" class="botao-form">Enviar</button>
+        </form>
+
+    </section>
+
+    <script>
+        function enviarWhats(event) {
+            event.preventDefault()
+
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '5599984683394'
+
+            const texto = `Olá! Me chamo ${nome}, ${mensagem}`
+            const msgFormatada = encodeURIComponent(texto)
+
+            const url = `https://wa.me/${telefone}?text=${msgFormatada}`
+
+            window.open(url, '_blank')
+        }
+
+    </script>
+
+</body>
+
+</html>
